@@ -20,3 +20,9 @@ class IndexView(generic.ListView):
 class DetailView(generic.DetailView):
     model = Title
     template_name = "blogs/detail.html"
+
+    def get_queryset(self):
+        """
+        Excludes any titles that aren't published yet.
+        """
+        return Title.objects.filter(pub_date__lte=timezone.now())
