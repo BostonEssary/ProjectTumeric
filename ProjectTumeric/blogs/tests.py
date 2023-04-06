@@ -17,6 +17,7 @@ from .models import Title
 #                                                                                              #
 ################################################################################################
 
+##### Index View #####
 
 def create_title(title_text, days):
     """
@@ -25,6 +26,7 @@ def create_title(title_text, days):
     """
     time = timezone.now() + datetime.timedelta(days=days)
     return Title.objects.create(title_text=title_text, pub_date=time)
+
 
 class TitleIndexViewTests(TestCase):
     def test_no_title(self):
@@ -57,9 +59,27 @@ class TitleIndexViewTests(TestCase):
         self.assertContains(response, "No titles are available")
         self.assertQuerySetEqual(response.context["latest_title_list"],[])
 
+##### Detail Views #####
 
+class TitleDetailViewTests(TestCase):
+    def test_future_title(self):
+        """
+        The detail view of a title with a pub_date in the future returns a 404 not found
+        """
+        future_title = create_title(title_text="Future Title.", days=5)
+        url = reverse("blogs:detail", args=(future_title.id,))
+        response = self.client.get(url)
+        self.assertEqual(response.status_code, 404)
 
-        
+    def test_past_title(self):
+        """
+        The detail view of a question with a pub_date in the past displays the title's text.
+        """
+
+        past_title = create_title(title_text="Past Title.", days=-5)
+        url = reverse("blogs:detail", args=(past_title.id,))
+        response = self.client.get(url)
+        self.assertContains(response, past_title.title_text)
 
 
 
