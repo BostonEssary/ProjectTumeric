@@ -9,7 +9,7 @@ from .models import Title, Body
 
 class IndexView(generic.ListView):
     template_name = "blogs/index.html"
-    context_object_name = "latest_question_list"
+    context_object_name = "latest_title_list"
 
     def get_queryset(self):
         """Return the last five published blogs"""

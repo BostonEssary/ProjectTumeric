@@ -1,6 +1,7 @@
 import datetime
 from django.db import models
 from django.utils import timezone
+from django_quill.fields import QuillField
 
 
 class Title(models.Model):
@@ -16,7 +17,7 @@ class Title(models.Model):
 
 class Body(models.Model):
     title = models.ForeignKey(Title, on_delete=models.CASCADE)
-    body_text = models.TextField()
+    body_text = QuillField()
 
     def __str__(self):
         return self.body_text
