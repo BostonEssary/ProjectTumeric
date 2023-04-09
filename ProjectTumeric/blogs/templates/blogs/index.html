@@ -1,5 +1,6 @@
+{# Load the tag library #}
 {% load static %}
-{% load tailwind_tags %}
+
 
 
 <!DOCTYPE html>
@@ -8,24 +9,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% tailwind_css %}
+    <link rel="stylesheet"
+    
+    href="{% static 'blogs\css\custom_bootstrap.css'%}">
     <title>Blogs|Index</title>
 </head>
-<body class="bg-purple-950" style="background-image: url('C:\Users\19289\repos\ProjectTumeric\ProjectTumeric\blogs\static\blogs\images\bud.png')">
+<body class="bg-primary">
+    {% block body-content %}
 {% if latest_title_list %}
 <div class="grid grid-cols-4 gap-4">
     {% for title in latest_title_list %}
-    
-        <div class="w-400 bg-purple-950 h-60 border-2 border-green-400 drop-shadow-lg" >
-            <a  href="{% url 'blogs:detail' title.id %}">{{ title.title_text }}</a>
+    <div class="card shadow-lg border-secondary border-3 text-secondary bg-primary mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+            <img src="{% static 'blogs\images\bud.png'%}" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title text-secondary">{{ title.title_text }}</h5>
+              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+            </div>
+          </div>
         </div>
+      </div>
+    
     
     {% endfor %}
+    <h1 class="text-secondary">Test</h1>
 </div>
 
 
 {% else %}
     <p>No polls are available.</p>
 {% endif %}
+
+{% endblock %}
 </body>
 </html>
