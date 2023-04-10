@@ -7,7 +7,23 @@
 {% bootstrap_css %}
 {% bootstrap_javascript %}
 
-{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">{% endblock %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" href="{% static "admin/css/dashboard.css" %}">
+
+<style>
+    :root {
+      --primary: #66F284;
+      --secondary: #66F284;
+      --link-fg: #66F284;
+      --link-selected-fg: #8f5bb2;
+      --body-bg: #24044A;
+      --body-fg: #66F284;
+      --primary-fg: #24044A;
+      --accent: #24044A;
+    }
+    </style>
+{% endblock %}
+
+
 
 {% block coltype %}colMS{% endblock %}
 

@@ -4,6 +4,9 @@ from django.utils import timezone
 from django_quill.fields import QuillField
 
 
+class QuillPost(models.Model):
+    content = QuillField()
+
 class Title(models.Model):
     title_text = models.CharField(max_length=20)
     pub_date = models.DateTimeField("date published")
@@ -17,7 +20,7 @@ class Title(models.Model):
 
 class Body(models.Model):
     title = models.ForeignKey(Title, on_delete=models.CASCADE)
-    body_text = QuillField()
+    body_text = QuillPost
 
     def __str__(self):
         return self.body_text
