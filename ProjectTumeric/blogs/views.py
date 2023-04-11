@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Title, Body
+from .models import Title
 
 
 class IndexView(generic.ListView):

@@ -1,5 +1,17 @@
 {% extends "admin/base.html" %}
 
+{% block extrastyle %}
+<style type="text/css">
+    .django-quill-widget-container {
+        width: 100% !important;
+        height: 200px;
+      }
+    #content{
+        height: 800px;
+    }
+</style>
+{% endblock %}
+
 {% block title %}{% if subtitle %}{{ subtitle }} | {% endif %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
 
 {% block branding %}

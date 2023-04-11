@@ -3,11 +3,8 @@ from django.db import models
 from django.utils import timezone
 from django_quill.fields import QuillField
 
-
-class QuillPost(models.Model):
-    content = QuillField()
-
 class Title(models.Model):
+    id = models.AutoField(primary_key=True)
     title_text = models.CharField(max_length=20)
     pub_date = models.DateTimeField("date published")
 
@@ -18,10 +15,9 @@ class Title(models.Model):
     def __str__(self):
         return self.title_text
 
-class Body(models.Model):
+class QuillPost(models.Model):
+    id = models.AutoField(primary_key=True)
     title = models.ForeignKey(Title, on_delete=models.CASCADE)
-    body_text = QuillPost
+    content = QuillField()
 
-    def __str__(self):
-        return self.body_text
     

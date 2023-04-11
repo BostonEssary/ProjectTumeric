@@ -1,6 +1,8 @@
-
 {% load i18n static %}
+{% load bootstrap5 %}
 
+{% bootstrap_css %}
+{% bootstrap_javascript %}
 <!DOCTYPE html>
 {% get_current_language as LANGUAGE_CODE %}{% get_current_language_bidi as LANGUAGE_BIDI %}
 <html lang="{{ LANGUAGE_CODE|default:"en-us" }}" dir="{{ LANGUAGE_BIDI|yesno:'rtl,ltr,auto' }}">
@@ -14,7 +16,22 @@
   <link rel="stylesheet" href="{% static "admin/css/nav_sidebar.css" %}">
   <script src="{% static 'admin/js/nav_sidebar.js' %}" defer></script>
 {% endif %}
-{% block extrastyle %}{% endblock %}
+{% block extrastyle %}
+
+{% endblock %}
+<style>
+  :root {
+    --primary: #66F284;
+    --secondary: #66F284;
+    --link-fg: #66F284;
+    --link-selected-fg: #8f5bb2;
+    --body-bg: #24044A;
+    --body-fg: #66F284;
+    --primary-fg: #24044A;
+    --accent: #24044A;
+  }
+  </style>
+
 {% if LANGUAGE_BIDI %}<link rel="stylesheet" href="{% block stylesheet_rtl %}{% static "admin/css/rtl.css" %}{% endblock %}">{% endif %}
 {% block extrahead %}{% endblock %}
 {% block responsive %}
@@ -23,6 +40,8 @@
     {% if LANGUAGE_BIDI %}<link rel="stylesheet" href="{% static "admin/css/responsive_rtl.css" %}">{% endif %}
 {% endblock %}
 {% block blockbots %}<meta name="robots" content="NONE,NOARCHIVE">{% endblock %}
+
+<link rel="stylesheet" href="{% static "admin/css/custom_bootstrap.css"%}">
 </head>
 
 <body class="{% if is_popup %}popup {% endif %}{% block bodyclass %}{% endblock %}"
