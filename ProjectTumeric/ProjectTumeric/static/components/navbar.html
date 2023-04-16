@@ -1,0 +1,52 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet"
+        
+        href="{% static 'blogs\css\custom_bootstrap.css'%}">
+        
+        <title>Blogs|Index</title>
+
+        <style>
+            .nav-link {
+                transition: all 0.5s ease;
+              }
+              .nav-link:hover{
+               transform: scale(1.2);
+               
+              }
+        </style>
+    </head>
+    <title></title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-primary border border-3 border-secondary rounded-3 m-4">
+        <div class="container-fluid">
+          <a class="navbar-brand text-secondary" href="#">
+            <img src="{% static 'blogs\images\navbud.png'%}" alt="">
+            THE PHUNK</a>
+            
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav text-secondary">
+                  <a class="nav-link text-secondary" aria-current="page" href="{% url 'blogs:index' %}" >Blogs</a>
+                  <a class="nav-link text-secondary" href="{% url 'reviews:index' %}">Reviews</a>
+                  <a class="nav-link text-secondary" href="#">Podcasts</a>
+                </div>
+              </div>
+          
+          
+            
+        </div>
+      </nav>
+</body>
+</html>

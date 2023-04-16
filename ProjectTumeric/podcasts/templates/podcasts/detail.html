@@ -1,0 +1,31 @@
+{# Load the tag library #}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+    
+    href="{% static 'blogs\css\custom_bootstrap.css'%}">
+    
+    <title>Podcasts:{{ title.title_text }}</title>
+</head>
+<body class="bg-primary">
+    {% include 'blogs/components/navbar.html'%}
+    <div class="container d-flex flex-column align-items-center bg-secondary text-primary rounded mt-4">
+        <h1>{{ title.title_text }}</h1>
+        {% for audio in title.audio_set.all %}
+
+        <audio
+            controls
+            src="{{ audio.audio_file.url }}">
+            </audio>
+        
+        {% endfor %}
+        
+    </div>
+</body>
+</html>

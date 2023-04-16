@@ -12257,7 +12257,7 @@ textarea.form-control-lg {
 
 .card {
   box-shadow: 0 0px 0px #66F284 inset, 0 0 8px #66F284 !important;
-  transition: all 0.5s ease;
+  transition: all 0.2s ease;
 }
 
 .card:hover{

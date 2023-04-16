@@ -1,0 +1,8 @@
+.colM .aligned .vLargeTextField, .colM .aligned .vXMLLargeTextField {
+    width: 800px;
+  }
+
+
+ *{
+  color: orange;
+ }

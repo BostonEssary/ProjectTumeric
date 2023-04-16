@@ -1,6 +1,7 @@
 div.form-row div.django-quill-widget-container {
     display: inline-block;
     width: 100%;
+    height: 100%;
 }
 .quill-editor iframe,
 .quill-editor video,
