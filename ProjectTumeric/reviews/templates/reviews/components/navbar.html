@@ -13,8 +13,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
         
-        href="{% static 'blogs\css\custom_bootstrap.css'%}">
+        href="{% static 'reviews\css\custom_bootstrap.css'%}">
+        <link rel="stylesheet"
         
+        href="{% static 'reviews\css\style.css'%}">
         <title>Blogs|Index</title>
 
         <style>
@@ -38,21 +40,21 @@
     <nav class="navbar navbar-dark navbar-expand-lg bg-primary border border-3 border-secondary rounded-3 m-4">
         <div class="container-fluid">
           <a class="navbar-brand text-secondary" href="#">
-            <img src="{% static 'blogs\images\navbud.png'%}" alt="">
-            THE PHUNK</a>
+            <img class="branding" src="{% static 'reviews/images/brand.png'%}" alt="">
+            </a>
             <button class="navbar-toggler btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav text-secondary">
                   <li class="nav-item"> 
-                    <a class="nav-link text-secondary" aria-current="page" href="{% url 'blogs:index' %}" >Blogs</a>
+                    <a class="nav-link text-secondary" aria-current="page" href="{% url 'blogs:index' %}" > <img class="branding" src="{% static 'reviews/images/blogs.png'%}" alt=""></a>
                   </li>
                   <li class="nav-item"> 
-                    <a class="nav-link text-secondary" href="{% url 'reviews:index' %}">Reviews</a>
+                    <a class="nav-link text-secondary" href="{% url 'reviews:index' %}"><img class="branding" src="{% static 'reviews/images/reviews.png'%}" alt=""></a>
                   </li>
                   <li class="nav-item"> 
-                    <a class="nav-link text-secondary" href="{% url 'podcasts:index' %}">Podcasts</a>
+                    <a class="nav-link text-secondary" href="{% url 'podcasts:index' %}"><img class="branding" src="{% static 'reviews/images/podcasts.png'%}" alt=""></a>
                   </li>
                   
                 </ul>

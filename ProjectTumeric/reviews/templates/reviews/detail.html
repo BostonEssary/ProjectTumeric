@@ -14,17 +14,13 @@
     <title>Reviews:{{ review.title }}</title>
 </head>
 <body class="bg-primary">
-    {% include 'blogs/components/navbar.html'%}
+    {% include 'reviews/components/navbar.html'%}
     <div class="container d-flex flex-column bg-secondary text-primary rounded mt-4">
         <h1>{{ review.title }}</h1>
         <p>
             {{ review.body.html|safe }}
         </p>
-        {% for quillpost in title.quillpost_set.all %}
-            <p>
-                {{ quillpost.content.html|safe }}
-            </p>
-        {% endfor %}
+        <img src="{{MEDIA_URL}}{{review.img_one}}" alt="">
     </div>
 </body>
 </html>

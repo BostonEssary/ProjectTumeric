@@ -13,25 +13,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet"
         
-        href="{% static 'blogs\css\custom_bootstrap.css'%}">
+        href="{% static 'reviews\css\custom_bootstrap.css'%}">
         
         <title>Blogs|Index</title>
     </head>
     <title></title>
 </head>
 <body>
-  <div class="card shadow border-secondary border-3 text-secondary bg-primary m-4" style="max-width: 500px; --bs-bg-opacity: .7;" >
+  <div class="card shadow border-secondary border-3 text-secondary bg-primary m-4" style="max-width: 400px; --bs-bg-opacity: .7;" >
     <div class="row no-gutters">
-        <div class="col-md-4">
-          <img src="{% static 'blogs\images\bud.png'%}" alt="...">
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title text-secondary">{{ review.title }}</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-secondary">{{ title.pub_date }}</small></p>
         </div>
-        <div class="col-md-8">
-          <div class="card-body">
-            <h5 class="card-title text-secondary">{{ review.title }}</h5>
-            <p class="card-text"></p>
-            <p class="card-text"><small class="text-secondary">{{ title.pub_date }}</small></p>
-          </div>
-        </div>
+      </div>
+          <img class="card-picture"src="{{MEDIA_URL}}{{review.img_one}}" alt="...">
+        
+        
       </div>
     </div>
 </body>

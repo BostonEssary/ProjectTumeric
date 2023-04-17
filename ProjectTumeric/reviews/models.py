@@ -7,7 +7,9 @@ class Review(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField(max_length=50)
     body = QuillField()
-    images = models.FileField(upload_to='review_images/%m/%d')
+    img_one = models.FileField(upload_to='review_img_1/%m/%d')
+    img_two = models.FileField(upload_to='review_img_2/%m/%d')
+    img_three = models.FileField(upload_to='review_img_3/%m/%d')
     pub_date = models.DateTimeField("date published")
     def __str__(self):
         return self.title
