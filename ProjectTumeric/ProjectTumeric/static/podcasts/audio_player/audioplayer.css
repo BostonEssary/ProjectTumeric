@@ -1,0 +1,77 @@
+#audio-player-container{
+  height: 300px;
+  width: 300px;
+  background-image: url("audio_player.png");
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  
+}
+
+#buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#play-button, #pause-button, #rewind-button, #fast-forward-button {
+background-color: rgba(0, 0, 0, 0);
+border: none;
+height: 75px;
+width: 75px;
+padding: 0;
+
+}
+#rewind-button, #fast-forward-button {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  
+  }
+
+.active-button {
+  border: solid;
+  border-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 3px 15px rgb(255, 255, 255, 0.6);
+}
+
+html, body {
+  height:100%;
+}
+
+#volume-container, #seeker-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+}
+.label{
+  padding: 0px;
+  margin: 0px;
+  font-size: 12px;
+  color: rgb(255, 255, 255, 0.6);
+  font-weight: bold;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+#volume, #seeker {
+  -webkit-appearance: none;  /* Override default CSS styles */
+appearance: none;
+  background: rgb(255, 255, 255, 0.4);
+  height: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+#volume::-moz-range-thumb, #seeker::-moz-range-thumb {
+  border: none;
+   width: 10px; /* Set a specific slider handle width */
+   height: 10px; /* Slider handle height */
+   background: #24044A; /* Green background */
+   cursor: pointer; /* Cursor on hover */
+   outline: none;
+ }
