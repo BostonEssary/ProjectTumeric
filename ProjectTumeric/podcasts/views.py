@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.utils import timezone
 
-from .models import Title
+from .models import Podcast
 # Create your views here.
 
 class IndexView(generic.ListView):
@@ -11,10 +11,10 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published blogs"""
-        return Title.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[
+        return Podcast.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[
             :5
             ]
     
 class DetailView(generic.DetailView):
-    model = Title
+    model = Podcast
     template_name = "podcasts/detail.html"

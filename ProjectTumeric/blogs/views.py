@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 
-from .models import Title
+from .models import Blog
 
 
 class IndexView(generic.ListView):
@@ -13,16 +13,16 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published blogs"""
-        return Title.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[
+        return Blog.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[
             :5
             ]
     
 class DetailView(generic.DetailView):
-    model = Title
+    model = Blog
     template_name = "blogs/detail.html"
 
     def get_queryset(self):
         """
         Excludes any titles that aren't published yet.
         """
-        return Title.objects.filter(pub_date__lte=timezone.now())
+        return Blog.objects.filter(pub_date__lte=timezone.now())

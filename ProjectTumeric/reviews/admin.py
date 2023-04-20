@@ -10,8 +10,6 @@ class ReviewAdmin(admin.ModelAdmin):
  
    pass
 
-class QuillPostAdmin(admin.ModelAdmin):
-   pass
 
 admin.site.register(Review, ReviewAdmin)
 
