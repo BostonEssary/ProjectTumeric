@@ -10,17 +10,40 @@
     <link rel="stylesheet"
     
     href="{% static 'reviews\css\custom_bootstrap.css'%}">
+    <link rel="stylesheet"
+    
+    href="{% static 'reviews\css\detail.css'%}">
     
     <title>Reviews:{{ review.title }}</title>
+    <style>
+       
+    </style> 
 </head>
 <body class="bg-primary">
+
     {% include 'reviews/components/navbar.html'%}
-    <div class="container d-flex flex-column bg-secondary text-primary rounded mt-4">
+    <div 
+    class="container d-flex flex-column 
+    bg-secondary text-primary rounded mt-4">
+    <div class="container-fluid d-flex flex-column align-items-center">
+
         <h1>{{ review.title }}</h1>
-        <p>
-            {{ review.body.html|safe }}
-        </p>
-        <img src="{{MEDIA_URL}}{{review.img_one}}" alt="">
+
+            <div>
+
+                <p>
+                    {{ review.body.html|safe }}
+                </p>
+
+            </div>
+            
+            <div>
+                <img src="{{MEDIA_URL}}{{review.img_one}}" 
+                class="pics img-fluid mx-auto d-block" 
+                style="max-width: 500px; min-width: 300px;" alt="">
+            </div>
+            
+        </div>
     </div>
 </body>
 </html>

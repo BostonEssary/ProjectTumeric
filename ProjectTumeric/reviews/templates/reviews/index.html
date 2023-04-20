@@ -9,20 +9,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"
     
-    href="{% static 'reviews\css\custom_bootstrap.css'%}">
+    href="{% static 'blogs/css/custom_bootstrap.css' %}">
     
     <title>Reviews|Index</title>
 </head>
 <body class="bg-primary">
     
-    {% include 'reviews/components/navbar.html' %}
+    {% include 'blogs/components/navbar.html' %}
 
     {% for review in latest_review_list %}
 
 
-    <a href="{% url 'reviews:detail' review.id %}">
-        {% include 'reviews/components/cards.html' %}
-    </a>
+    
+        {% include 'blogs/components/cards.html' %}
+    
     {% endfor %}
 </body>
 </html>
