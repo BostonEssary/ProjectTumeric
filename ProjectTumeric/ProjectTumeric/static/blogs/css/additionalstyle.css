@@ -1,0 +1,36 @@
+.card {
+    box-shadow: 0 0px 0px #66F284 inset, 0 0 8px #66F284 !important;
+    transition: all 0.2s ease;
+  }
+  
+  .card:hover{
+   transform: scale(1.05);
+  }
+  
+  body{
+    background-image: url('../images/smallbud.png');
+    background-repeat: repeat
+  }
+  
+  .gradient-custom {
+    /* fallback for old browsers */
+    background: #24044A;
+  
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, #66F284, #24044A);
+  
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, #66F284, #24044A);
+  }
+  
+  .nav-link {
+    transition: all 0.5s ease;
+  }
+  
+  .nav-link:hover{
+   transform: scale(1.05);
+  }
+  
+  
+  
+  
