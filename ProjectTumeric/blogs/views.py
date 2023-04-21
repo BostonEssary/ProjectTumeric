@@ -10,7 +10,7 @@ from .models import Blog
 class IndexView(generic.ListView):
     template_name = "blogs/index.html"
     context_object_name = "latest_title_list"
-
+    
     def get_queryset(self):
         """Return the last five published blogs"""
         return Blog.objects.filter(pub_date__lte=timezone.now()).order_by("-pub_date")[

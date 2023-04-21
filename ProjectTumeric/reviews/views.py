@@ -22,7 +22,7 @@ class DetailView(generic.DetailView):
     model = Review
     template_name = "reviews/detail.html"
 
-    def get_queryset(self):
+    def get_queryset(self): 
         """
         Excludes any titles that aren't published yet.
         """
