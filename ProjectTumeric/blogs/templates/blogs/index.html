@@ -21,14 +21,14 @@
   {% include 'blogs/components/navbar.html' %}
 
  <div class="d-flex flex-wrap">
-{% if latest_title_list %}
+{% if latest_blog_list %}
 
-    {% for title in latest_title_list %}
+    {% for blog in latest_blog_list %}
 
 
-    <a href="{% url 'blogs:detail' title.id %}">
+    
         {% include 'blogs/components/cards.html' %}
-    </a>
+   
 
     {% endfor %}
     
