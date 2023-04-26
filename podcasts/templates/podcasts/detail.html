@@ -13,19 +13,6 @@
     
     <title>Podcasts:{{ title.title_text }}</title>
 </head>
-<body class="bg-primary">
-    {% include 'blogs/components/navbar.html'%}
-    <div class="container d-flex flex-column align-items-center bg-secondary text-primary rounded mt-4">
-        <h1>{{ title.title_text }}</h1>
-        {% for audio in title.audio_set.all %}
 
-        <audio
-            controls
-            src="{{ audio.audio_file.url }}">
-            </audio>
-        
-        {% endfor %}
-        
-    </div>
 </body>
 </html>
