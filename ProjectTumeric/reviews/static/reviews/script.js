@@ -3,6 +3,7 @@ text = text.trim();
 text = text.replace(/(\r\n|\n|\r)/gm, "");
 var words = text.split(" ");
 words = words.filter(item => item);
+var wordIndexes = words.length - 1;
 
 
 

@@ -33,8 +33,11 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'blogs.apps.BlogsConfig',
+    'users.apps.UsersConfig',
     'reviews.apps.ReviewsConfig',
+    'register.apps.RegisterConfig',
     'podcasts.apps.PodcastsConfig',
+    'ProjectTumeric',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,6 +47,8 @@ INSTALLED_APPS = [
     "django_quill",
     "bootstrap5",
     "django_sass",
+    "crispy_forms",
+    "crispy_bootstrap4",
     
 ]
 
@@ -63,7 +68,7 @@ ROOT_URLCONF = 'ProjectTumeric.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / "templates"],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -148,6 +153,7 @@ BOOTSTRAP5 = {
     "href": "node_modules\bootstrap\dist\css\bootstrap.css"
 }
 
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 
-
+CRISPY_TEMPLATE_PACK = "bootstrap4"
 

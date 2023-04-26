@@ -18,12 +18,17 @@ from django.urls import path, include
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
+from register import views as v
 
 urlpatterns = [
+    path("", include("main.urls")),
     path("blogs/", include("blogs.urls")),
     path("reviews/", include("reviews.urls")),
     path("podcasts/", include("podcasts.urls")),
-    path("users/", include("users.urls")),
+    path("users/", include("django.contrib.auth.urls")),
+    path('users/', include('users.urls')),
+    path("register/", v.register, name="register"),
     path('admin/', admin.site.urls),
     path("__reload__/", include("django_browser_reload.urls")),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+ 
