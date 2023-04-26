@@ -1,0 +1,30 @@
+
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  {% block card %}
+  <div class="card shadow border-secondary border-3 text-secondary bg-primary m-4" style="max-width: 400px; --bs-bg-opacity: .7;" >
+    <div class="row no-gutters">
+      <div class="col-md-8">
+        <a href="{% url 'blogs:detail' blog.id %}">
+        <div class="card-body">
+          <h5 class="card-title text-secondary">{{ blog.title }}</h5>
+          <p class="card-text"></p>
+          <p class="card-text"><small class="text-secondary">{{ blog.pub_date }}</small></p>
+        </div>
+      </a>
+      </div>
+          <img class="card-picture p-4 "src="{{MEDIA_URL}}{{blog.img_one}}" style="border-radius: 10px;" alt="...">
+      </div>
+    </div>
+  {% endblock card %}
+</body>
+</html>
+
+
+
+
