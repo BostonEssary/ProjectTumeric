@@ -131,6 +131,32 @@
     max-width: 50%;
   }
 
+  .section-1-container{
+    display: flex;
+    
+   }
+
+  .product-image{
+    max-width: 50%;
+    height: 50%;
+   flex-shrink: 2;
+  }
+
+   
+
+   #section-1{
+    flex-shrink: 4;
+   }
+
+   .container{
+    height: 100vh;
+   }
+
+   footer{
+    margin-top: auto;
+    
+   }
+
   
 
   
