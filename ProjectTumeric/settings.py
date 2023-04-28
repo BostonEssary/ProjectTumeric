@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'reviews.apps.ReviewsConfig',
     'register.apps.RegisterConfig',
     'podcasts.apps.PodcastsConfig',
+    'accounts.apps.AccountsConfig',
     'ProjectTumeric',
     'django.contrib.admin',
     'django.contrib.auth',
