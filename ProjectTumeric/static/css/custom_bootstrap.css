@@ -108,7 +108,8 @@
   
   body{
     background-image: url('../images/smallbud.png');
-    background-repeat: repeat
+    background-repeat: repeat;
+    height: 100vh;
   }
   
   .gradient-custom {
@@ -156,7 +157,7 @@
    }
 
    footer{
-    margin-top: auto;
+    margin-top: auto !important;
     
    }
 
