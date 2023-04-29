@@ -12,13 +12,13 @@
     <div class="bg-secondary form-container p-5 m-5 " style="border-radius: 10px;">
         <label for="username">Username: </label>
         <h1 id="username">{{ user  }}</h1>
-        
+        <form action="" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+        </form>
     </div>
 
-    <form action="" method="POST">
-        {% csrf_token %}
-        {{ form.avatar }}
-    </form>
+    
     
     {% endblock body %}
 </body>

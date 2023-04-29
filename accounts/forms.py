@@ -6,6 +6,7 @@ class LoginForm(AuthenticationForm):
     pass 
 
 class AvatarForm(forms.ModelForm):
+    avatar = forms.ImageField()
     class Meta:
         model = MyUser
         fields = (
