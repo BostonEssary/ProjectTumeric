@@ -10,6 +10,8 @@
 	{{ form|crispy }}
 	<button type="submit" class="btn btn-success">Login</button>
     </form>
+	<a href="{% url 'social:begin' 'github' %}" class="btn btn-link btn-lg active btn-block">
+	<a href="{% url 'password_reset' %}"><i>Forgot Password?</i></a>
 
 {% endblock %}
 </div>

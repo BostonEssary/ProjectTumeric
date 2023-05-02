@@ -3,8 +3,13 @@ from django.http import HttpResponseRedirect, Http404
 from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
+from django.urls import reverse_lazy
+from django.contrib.auth.views import PasswordResetView
+from django.contrib.messages.views import SuccessMessageMixin
 
 from .models import Blog
+
+
 
 
 class IndexView(generic.ListView):

@@ -19,6 +19,10 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf import settings
 from django.conf.urls.static import static
 from register import views as v
+from django.urls import re_path
+from accounts.views import ResetPasswordView
+from django.contrib.auth import views as auth_views
+from accounts.views import ChangePasswordView
 
 urlpatterns = [
     path("", include("main.urls")),
@@ -29,6 +33,15 @@ urlpatterns = [
     path("register/", include("register.urls")),
     path("accounts/", include("accounts.urls")),
     path('admin/', admin.site.urls),
+    path('password-reset-confirm/<uidb64>/<token>/',
+         auth_views.PasswordResetConfirmView.as_view(template_name='users/password_reset_confirm.html'),
+         name='password_reset_confirm'),
+    path('password-reset-complete/',
+         auth_views.PasswordResetCompleteView.as_view(template_name='users/password_reset_complete.html'),
+         name='password_reset_complete'),
+    path('password-reset/', ResetPasswordView.as_view(), name='password_reset'),
+    path('password-change/', ChangePasswordView.as_view(), name='password_change'),
+    re_path(r'^oauth/', include('social_django.urls', namespace='social')),
     path("__reload__/", include("django_browser_reload.urls")),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
  
