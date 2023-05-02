@@ -12,9 +12,9 @@ from .forms import RegisterForm
 from .forms import UpdateUserForm, UpdateProfileForm
 
 class ChangePasswordView(SuccessMessageMixin, PasswordChangeView):
-    template_name = 'users/change_password.html'
+    template_name = 'accounts/change_password.html'
     success_message = "Successfully Changed Your Password"
-    success_url = reverse_lazy('users-home')
+    success_url = reverse_lazy('accounts-home')
 
 @login_required
 def profile(request):
